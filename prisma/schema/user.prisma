@@ -10,7 +10,7 @@ model User {
     emailVerificationTokenExpiresAt DateTime? @map("email_verification_token_expires_at")
 
     resetPasswordToken String? @map("reset_password_token")
-        resetPasswordTokenExpiresAt DateTime? @map("reset_password_token_expires_at")
+    resetPasswordTokenExpiresAt DateTime? @map("reset_password_token_expires_at")
 
 
     profile      Profile?
@@ -29,6 +29,7 @@ model User {
 model Profile {
     id String @id @default(cuid())
 
+    avatarUrl  String? @map("avatar_url")
     fullName String?  @map("full_name")
     age      Int?
     bio      String?

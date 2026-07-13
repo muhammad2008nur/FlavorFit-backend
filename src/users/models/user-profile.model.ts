@@ -47,6 +47,9 @@ export class ProfileModel {
   id!: string;
   @Field()
   fullName!: string;
+  @Field({ nullable: true })
+  avatarUrl?: string;
+
   @Field(() => Gender, { nullable: true })
   gender?: string;
   @Field(() => Int, { nullable: true })

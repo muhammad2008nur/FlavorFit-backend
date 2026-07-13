@@ -14,7 +14,8 @@ import { getTurnStileConfig } from "./config/turnstile.config";
 import { ResendModule } from "nestjs-resend";
 import { getResendConfig } from "./config/resend.config";
 import { EmailModule } from "./email/email.module";
-import { MeadiaUploadModule } from './meadia-upload/meadia-upload.module';
+import { MediaUploadModule } from "./media-upload/media-upload.module";
+// import { ProfileModule } from "./profile/profile.module";
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),
@@ -40,7 +41,8 @@ import { MeadiaUploadModule } from './meadia-upload/meadia-upload.module';
       inject: [ConfigService],
     }),
     EmailModule,
-    MeadiaUploadModule,
+    MediaUploadModule,
+    // ProfileModule,
   ],
   providers: [AppService],
 })
