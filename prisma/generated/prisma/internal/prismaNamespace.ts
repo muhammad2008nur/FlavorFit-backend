@@ -1654,6 +1654,7 @@ export const ProfileScalarFieldEnum = {
   age: 'age',
   bio: 'bio',
   gender: 'gender',
+  sites: 'sites',
   userId: 'userId',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
