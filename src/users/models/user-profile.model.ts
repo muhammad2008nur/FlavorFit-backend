@@ -51,7 +51,7 @@ export class ProfileModel {
   avatarUrl?: string;
 
   @Field(() => Gender, { nullable: true })
-  gender?: string;
+  gender?: Gender;
   @Field(() => Int, { nullable: true })
   age?: number;
   @Field({ nullable: true })
