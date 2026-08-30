@@ -54,8 +54,10 @@ export class ProfileModel {
   gender?: Gender;
   @Field(() => Int, { nullable: true })
   age?: number;
-  @Field({ nullable: true })
+  @Field(() => String, { nullable: true })
   bio?: string;
+  @Field(() => [String])
+  sites?: string[];
   @Field()
   createdAt!: Date;
   @Field()

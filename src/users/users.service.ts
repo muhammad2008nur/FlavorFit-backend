@@ -38,7 +38,7 @@ export class UsersService {
         ...(profile && {
           profile: {
             upsert: {
-              create: { ...profile, sites: [] },
+              create: { ...profile },
               update: profile,
             },
           },

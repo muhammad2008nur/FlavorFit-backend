@@ -14,4 +14,6 @@ export class ProfileInputUpdate {
 
   @Field(() => String, { nullable: true })
   bio?: string;
+  @Field(() => [String], { nullable: true })
+  sites?: string[];
 }
