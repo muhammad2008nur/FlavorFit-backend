@@ -21,7 +21,7 @@ export class MediaUploadController {
   @UseInterceptors(
     FileInterceptor("file", {
       limits: {
-        fileSize: 50 * 1024 * 1024, // 5MB
+        fileSize: 5 * 1024 * 1024, // 5MB
       },
     }),
   )
