@@ -1,5 +1,4 @@
 import { Injectable } from "@nestjs/common";
-// import { randomUUID } from "crypto";
 import { path } from "app-root-path";
 import { v4 } from "uuid";
 import { ensureDir, writeFile } from "fs-extra";
@@ -15,8 +14,8 @@ export class MediaUploadService {
       Buffer.from(file.originalname, "binary"),
       "utf-8",
     );
-    const safeName = original.replace(/[^\w.-]+/g, "-").toLowerCase();
-    const name = `${v4().slice(0, 5)}-${safeName}`;
+    const safeName = original.replace(/[^\p{L}\p{N}_.-]+/gu, "-").toLowerCase();
+    const name = `${v4().slice(0, 7)}-${safeName}`;
     await writeFile(`${uploadFolder}/${name}`, file.buffer);
     const url = `/uploads/avatars/${name}`;
     await this.prisma.user.update({
